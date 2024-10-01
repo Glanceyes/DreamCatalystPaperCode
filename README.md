@@ -139,10 +139,12 @@ ns-train dc_splat --data dataset/{dataset_name} --load-dir outputs/{dataset_name
 
 ## Important Files
 
-```
+```bash
 3d_editing/dc_nerf/pipelines/dc_pipeline.py
 3d_editing/dc_nerf/dc_config.py
 dc/dc.py
 dc/dc_unet.py
 dc/utils/free_lunch.py
 ```
+
+<br/>
