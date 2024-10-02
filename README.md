@@ -7,7 +7,7 @@ Authors Anonymized
 </h4>
 
 <h5 align="center">
-<a href="https://anonymous.4open.science/r/DreamCatalystPaperCode">Anonymized Link for Project Page</a>
+<a href="https://dreamcatalystpaper.github.io/">Anonymized Link for Project Page</a>
 </h5>
 
 
