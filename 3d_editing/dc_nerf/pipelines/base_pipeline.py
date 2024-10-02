@@ -56,7 +56,6 @@ class ModifiedVanillaPipeline(VanillaPipeline):
             local_rank=local_rank,
         )
         self.datamanager.to(device)
-        # TODO(ethan): get rid of scene_bounds from the model
         assert self.datamanager.train_dataset is not None, "Missing input dataset"
 
         self._model = config.model.setup(

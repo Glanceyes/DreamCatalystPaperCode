@@ -67,7 +67,6 @@ class DCNerfactoField(Field):
         use_pred_normals: whether to use predicted normals
         use_average_appearance_embedding: whether to use average appearance embedding or zeros for inference
         spatial_distortion: spatial distortion to apply to the scene
-        ### juil:
         use_appearance_embedding: whether to use appearance embedding
     """
 

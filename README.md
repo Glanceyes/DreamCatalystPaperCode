@@ -6,6 +6,9 @@ DreamCatalyst: Fast and High-Quality 3D Editing via Controlling Editability and 
 Authors Anonymized
 </h4>
 
+<h5 align="center">
+<a href="https://anonymous.4open.science/r/DreamCatalystPaperCode">Anonymized Link for Project Page</a>
+</h5>
 
 
 <br/>
@@ -52,7 +55,7 @@ pip install numpy==1.26.4
 pip install gsplat==0.1.6
 ```
 
-You should be able to see `dc` and `dc_splat` if the installation is successful in the following command.
+You should be able to see `dc` and `dc_splat` if the installation is successful in the following commands.
 
 ```bash
 cd ..
@@ -86,6 +89,7 @@ ns-train nerfacto --data dataset/{dataset_name} --pipeline.model.use_appearance_
 ns-train nerfacto --data dataset/yuseung --pipeline.model.use_appearance_embedding False
 ```
 
+
 <b>3DGS</b>
 
 ```bash
@@ -95,7 +99,7 @@ ns-train splatfacto --data dataset/{dataset_name}
 ns-train splatfacto --data dataset/yuseung
 ```
 
-You can see that the outputs are saved in the `outputs/{dataset_name}/{model_name}/{timestamp}` directory. (e.g., `outputs/yuseung/nerfacto/2024-10-02_000000`)
+You can see that the outputs are saved in the `outputs/{dataset_name}/{model_name}/{timestamp}` directory. (e.g., `outputs/yuseung/nerfacto/2024-10-02_000000` for NeRF, `outputs/yuseung/splatfacto/2024-10-02_000000` for 3DGS)
 
 
 <br/>
@@ -106,6 +110,18 @@ You can see that the outputs are saved in the `outputs/{dataset_name}/{model_nam
 
 ```bash
 ns-train dc --data dataset/{dataset_name} --load-dir outputs/{dataset_name}/{model_name}/{timestamp}/nerfstudio_models/ \
+ --pipeline.dc.src_prompt {source_prompt} \
+ --pipeline.dc.tgt_prompt {target_prompt} \
+ --vis viewer \
+ --max_num_iterations 3000 \
+ --pipeline.dc.freeu_b1 1.1 \
+ --pipeline.dc.freeu_b2 1.1 \
+ --pipeline.dc.freeu_s1 0.9 \
+ --pipeline.dc.freeu_s2 0.2 \
+ --pipeline.dc.sd_pretrained_model_or_path timbrooks/instruct-pix2pix
+
+ # Example
+ ns-train dc --data dataset/{dataset_name} --load-dir outputs/yuseung/nerfacto/2024-10-02_000000/nerfstudio_models/ \
  --pipeline.dc.src_prompt "a photo of a man" \
  --pipeline.dc.tgt_prompt "Turn him into a Batman" \
  --vis viewer \
@@ -124,6 +140,18 @@ You can use the <u>fast mode</u> by setting `max_num_iterations 3000` to `max_nu
 
 ```bash
 ns-train dc_splat --data dataset/{dataset_name} --load-dir outputs/{dataset_name}/{model_name}/{timestamp}/nerfstudio_models/ \
+ --pipeline.dc.src_prompt {source_prompt} \
+ --pipeline.dc.tgt_prompt {target_prompt} \
+ --vis viewer \
+ --max_num_iterations 3000 \
+ --pipeline.dc.freeu_b1 1.1 \
+ --pipeline.dc.freeu_b2 1.1 \
+ --pipeline.dc.freeu_s1 0.9 \
+ --pipeline.dc.freeu_s2 0.2 \
+ --pipeline.dc.sd_pretrained_model_or_path timbrooks/instruct-pix2pix
+
+ # Example
+  ns-train dc --data dataset/{dataset_name} --load-dir outputs/yuseung/splatfacto/2024-10-02_000000/nerfstudio_models/ \
  --pipeline.dc.src_prompt "a photo of a man" \
  --pipeline.dc.tgt_prompt "Turn him into a Batman" \
  --vis viewer \

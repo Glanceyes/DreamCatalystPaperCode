@@ -74,7 +74,6 @@ class DCTrainer(Trainer):
                 optimizers=self.optimizers, grad_scaler=self.grad_scaler, pipeline=self.pipeline, trainer=self
             )
         )
-        ### 0911 Juil
         # save images after training.
         self.callbacks.append(
             TrainingCallback(
