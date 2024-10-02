@@ -69,7 +69,7 @@ ns-train -h
 Please download the dataset from the following link and extract it to the `dataset` directory.
 
 > PDS provides image data for 3D scene. Please download the dataset [here](https://1drv.ms/f/s!AtxL_EOxFeYMk3rftsoc4L8cg0VS?e=Hhbprk). 
-This dataset is a subset of the 3D scene data from [Instruct-NeRF2NeRF](https://instruct-nerf2nerf.github.io/). You do not need to download Dreambooth checkpoints since our method does not require them.
+This dataset includes a subset of the 3D scene data from [Instruct-NeRF2NeRF](https://instruct-nerf2nerf.github.io/). You do not need to download Dreambooth checkpoints since our method does not require them.
 
 
 <br/>
